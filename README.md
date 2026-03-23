@@ -16,10 +16,10 @@ Built using **FastAPI (Backend)**, **React + Vite (Frontend)**, and
 - 📊 Workout Logging
 - 🔥 Automatic Streak Tracking
 - 🏆 Automatic Ranking & Leaderboard
-- 🏋️‍♂️ Equipment Management System ✅ *(NEW)*
+- 🏋️‍♂️ Equipment Management System 
 - 🔗 Advanced Relationships (Many-to-Many)
-- 🧩 Branch ↔ Sport Mapping ✅ *(NEW)*
-- 🧩 Membership ↔ Sport Mapping ✅ *(NEW)*
+- 🧩 Branch ↔ Sport Mapping 
+- 🧩 Membership ↔ Sport Mapping 
 - ✅ Data Validation using Pydantic
 - ⚡ Improved Frontend ↔ Backend API Integration
 
@@ -52,9 +52,9 @@ The system includes multiple interconnected entities:
 - WorkoutLogs
 - Streaks
 - Rankings
-- Equipment ✅ *(NEW)*
-- BranchSports (M:N) ✅ *(NEW)*
-- MembershipSports (M:N) ✅ *(NEW)*
+- Equipment 
+- BranchSports (M:N) 
+- MembershipSports (M:N) ✅ 
 
 ------------------------------------------------------------------------
 
