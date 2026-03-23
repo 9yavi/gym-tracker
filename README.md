@@ -4,38 +4,39 @@ A full-stack web application for managing sports activities,
 memberships, workouts, and performance tracking.
 
 Built using **FastAPI (Backend)**, **React + Vite (Frontend)**, and
-**SQLite (Database)** with strong validation and business logic.
+**SQLite (Database)** with strong validation, relational design, and real-world business logic.
 
 ------------------------------------------------------------------------
 
 # 🚀 Features
 
--   🔐 User Authentication (Register / Login)
--   🏋️ Sports and Workouts Management
--   🧾 Membership System
--   📊 Workout Logging
--   🔥 Automatic Streak Tracking
--   🏆 Automatic Ranking & Leaderboard
--   🔗 Advanced Relationships (Many-to-Many)
--   ✅ Data Validation using Pydantic
+- 🔐 User Authentication (Register / Login)
+- 🏋️ Sports and Workouts Management
+- 🧾 Membership System
+- 📊 Workout Logging
+- 🔥 Automatic Streak Tracking
+- 🏆 Automatic Ranking & Leaderboard
+- 🏋️‍♂️ Equipment Management System ✅ *(NEW)*
+- 🔗 Advanced Relationships (Many-to-Many)
+- 🧩 Branch ↔ Sport Mapping ✅ *(NEW)*
+- 🧩 Membership ↔ Sport Mapping ✅ *(NEW)*
+- ✅ Data Validation using Pydantic
+- ⚡ Improved Frontend ↔ Backend API Integration
 
 ------------------------------------------------------------------------
 
 # 🧠 Technical Highlights
 
--   More than **10 database entities**
--   Advanced relationships:
-    -   Branch ↔ Sport (Many-to-Many)
-    -   Membership ↔ Sport (Many-to-Many)
--   Clean architecture:
-    -   Models (Database)
-    -   Schemas (Validation)
-    -   Routers (API)
-    -   Services (Business Logic)
--   Secure password handling using **bcrypt hashing**
--   Automatic:
-    -   Streak updates based on activity
-    -   Ranking calculations based on performance
+- More than **10+ database entities**
+- Advanced relational design with **Many-to-Many relationships**
+- Clean architecture:
+  - Models (Database Layer)
+  - Schemas (Validation Layer)
+  - Routers (API Layer)
+  - Services (Business Logic Layer)
+- Secure password handling using hashing
+- Separation of concerns across backend modules
+- Scalable structure for future feature expansion
 
 ------------------------------------------------------------------------
 
@@ -43,16 +44,17 @@ Built using **FastAPI (Backend)**, **React + Vite (Frontend)**, and
 
 The system includes multiple interconnected entities:
 
--   Users
--   Branches
--   Memberships
--   Sports
--   Workouts
--   WorkoutLogs
--   Streaks
--   Rankings
--   BranchSports (M:N)
--   MembershipSports (M:N)
+- Users
+- Branches
+- Memberships
+- Sports
+- Workouts
+- WorkoutLogs
+- Streaks
+- Rankings
+- Equipment ✅ *(NEW)*
+- BranchSports (M:N) ✅ *(NEW)*
+- MembershipSports (M:N) ✅ *(NEW)*
 
 ------------------------------------------------------------------------
 
@@ -60,36 +62,59 @@ The system includes multiple interconnected entities:
 
 ## Backend
 
--   FastAPI
--   SQLAlchemy
--   Pydantic
--   SQLite
--   Passlib (bcrypt)
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- SQLite
+- Passlib (bcrypt)
 
 ## Frontend
 
--   React
--   Vite
+- React
+- Vite
 
 ------------------------------------------------------------------------
 
 # 📊 Business Logic
 
+## ⚙️ System Design Notes
+
+Some modules such as Equipment, Branch-Sport, and Membership-Sport relationships
+are designed as extensible components within the system architecture.
+
+They are fully integrated at the database and API levels, and can be easily
+extended with additional business logic (e.g., usage tracking, access control,
+or dynamic assignment rules) in future iterations.
+
 ## 🔥 Streak System
 
--   Automatically updated after each workout log
--   Tracks:
-    -   current streak
-    -   longest streak
--   Resets after inactivity
+- Automatically updated after each workout log
+- Tracks:
+  - current streak
+  - longest streak
+- Resets after inactivity
 
 ## 🏆 Ranking System
 
--   Automatically calculated based on:
-    -   number of workouts
-    -   total duration
-    -   streak
--   Generates leaderboard per sport
+- Automatically calculated based on:
+  - number of workouts
+  - total duration
+  - streak
+- Generates leaderboard per sport
+
+## 🏋️‍♂️ Equipment System 
+
+- Manage gym equipment
+- Link equipment to workouts
+- Designed for future extensions (usage tracking, maintenance)
+
+## 🔗 Relationship Logic 
+
+- Branch ↔ Sport:
+  - Each branch can support multiple sports
+- Membership ↔ Sport:
+  - Each membership grants access to multiple sports
+- Enforced using relational tables with proper constraints
 
 ------------------------------------------------------------------------
 
@@ -97,18 +122,23 @@ The system includes multiple interconnected entities:
 
 Main API modules:
 
--   /auth → Register / Login
--   /users
--   /branches
--   /memberships
--   /sports
--   /workouts
--   /workout-logs
--   /streaks
--   /rankings
+- /auth → Register / Login
+- /users
+- /branches
+- /memberships
+- /sports
+- /workouts
+- /workout-logs
+- /streaks
+- /rankings
+- /equipment 
+- /branch-sports 
+- /membership-sports 
 
-Example: GET /rankings/sport/{sport_id} Returns leaderboard for a
-specific sport.
+Example:
+
+GET /rankings/sport/{sport_id}  
+→ Returns leaderboard for a specific sport.
 
 ------------------------------------------------------------------------
 
@@ -116,47 +146,9 @@ specific sport.
 
 ## Backend
 
-cd backend python -m venv venv venv`\Scripts`{=tex}`\activate`{=tex} pip
-install -r requirements.txt python -m uvicorn main:app --reload
-
-Open: http://127.0.0.1:8000/docs
-
-------------------------------------------------------------------------
-
-## Frontend
-
-cd frontend npm install npm run dev
-
-------------------------------------------------------------------------
-
-# 📸 Screenshots
-
-Screenshots are available in the /screenshots folder.
-
-------------------------------------------------------------------------
-
-# 🧪 Example Flow
-
-1.  Register a user
-2.  Login
-3.  Create sport
-4.  Create workout
-5.  Create membership
-6.  Log workouts
-7.  System updates streak and ranking
-8.  View leaderboard
-
-------------------------------------------------------------------------
-
-# 👨‍💻 Contributors
-
--   Backend Development
--   Database Design
--   Frontend Development
-
-------------------------------------------------------------------------
-
-# 🎯 Project Goal
-
-To build a robust and scalable sports tracking system with real-world
-business logic.
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8001
