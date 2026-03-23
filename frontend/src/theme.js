@@ -1,0 +1,43 @@
+export const darkTheme = {
+  bg:            '#0d0118',
+  card:          '#160a2a',
+  cardAlt:       '#1e0f38',
+  border:        '#3d1a6e',
+  primary:       '#a855f7',
+  primaryDim:    '#a855f722',
+  pink:          '#ec4899',
+  pinkDim:       '#ec489922',
+  red:           '#ef4444',
+  redDim:        '#ef444422',
+  yellow:        '#facc15',
+  text:          '#f1f5f9',
+  muted:         '#a78bca',
+  mutedDark:     '#6b4fa0',
+  input:         '#06000f',
+  success:       '#86efac',
+  successDim:    '#14532d22',
+  successBorder: '#14532d',
+}
+
+export const lightTheme = {
+  bg:            '#f5f0ff',
+  card:          '#ffffff',
+  cardAlt:       '#ede9fe',
+  border:        '#ddd6fe',
+  primary:       '#9333ea',
+  primaryDim:    '#9333ea18',
+  pink:          '#db2777',
+  pinkDim:       '#db277718',
+  red:           '#dc2626',
+  redDim:        '#dc262618',
+  yellow:        '#d97706',
+  text:          '#1e1033',
+  muted:         '#6b21a8',
+  mutedDark:     '#7c3aed',
+  input:         '#f3f0ff',
+  success:       '#16a34a',
+  successDim:    '#dcfce7',
+  successBorder: '#86efac',
+}
+
+export const T = darkTheme
