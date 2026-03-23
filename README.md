@@ -53,8 +53,8 @@ The system includes multiple interconnected entities:
 - Streaks
 - Rankings
 - Equipment 
-- BranchSports (M:N) 
-- MembershipSports (M:N) ✅ 
+- BranchSports 
+- MembershipSports 
 
 ------------------------------------------------------------------------
 
@@ -139,6 +139,42 @@ Example:
 
 GET /rankings/sport/{sport_id}  
 → Returns leaderboard for a specific sport.
+
+------------------------------------------------------------------------
+
+# 📸 Screenshots
+
+Screenshots are available in the /screenshots folder.
+
+------------------------------------------------------------------------
+
+🧪 Example Flow
+
+This flow demonstrates how different system components interact together:
+	1.	Register a user
+	2.	Login
+	3.	Create a sport
+	6.	Create a workout linked to the sport
+	7.	Log workouts (WorkoutLogs)
+	8.	System automatically:
+	•	Updates user streak
+	•	Calculates ranking
+	9.	View leaderboard per sport
+  
+------------------------------------------------------------------------
+
+👨‍💻 Contributors
+	•	Backend Development
+	•	Database Design
+	•	Frontend Development
+	•	System Integration & Testing
+  
+------------------------------------------------------------------------
+
+# 🎯 Project Goal
+
+To build a robust and scalable sports tracking system with real-world
+business logic.
 
 ------------------------------------------------------------------------
 
